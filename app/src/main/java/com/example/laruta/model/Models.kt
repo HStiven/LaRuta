@@ -8,21 +8,17 @@ enum class TravelMode(val label: String) {
     RUN("Correr"),
     MOTO("Moto");
 
-    /** Siguiente modo (para el botón que alterna persona → corredor → moto). */
     fun next(): TravelMode = entries[(ordinal + 1) % entries.size]
 }
 
-/** Estado del recorrido. */
 enum class TrackingStatus { IDLE, TRACKING, FINISHED }
 
-/** Cómo se decide el tema: por el sensor de luz o fijo. */
 enum class ThemeMode(val label: String) {
     AUTO("Sensor de luz"),
     LIGHT("Claro"),
     DARK("Oscuro")
 }
 
-/** Sensor de movimiento que se está usando para contar pasos. */
 enum class StepSource(val label: String) {
     NONE("Sin sensor disponible"),
     STEP_COUNTER("Contador de pasos (TYPE_STEP_COUNTER)"),
@@ -30,10 +26,6 @@ enum class StepSource(val label: String) {
     ACCELEROMETER("Acelerómetro (TYPE_ACCELEROMETER)")
 }
 
-/**
- * Punto de interés: una foto con su ubicación y fecha/hora de captura.
- * La foto vive en la caché de la app (context.cacheDir/pois).
- */
 data class PointOfInterest(
     val id: Long,
     val title: String,

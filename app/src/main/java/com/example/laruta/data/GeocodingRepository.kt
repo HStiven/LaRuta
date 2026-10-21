@@ -12,17 +12,6 @@ import java.net.URL
 import java.net.URLEncoder
 import java.util.Locale
 
-/**
- * Convierte coordenadas en una dirección legible ("Cra. 72 #48a-69, Bogotá")
- * consumiendo la GEOCODING API de Google Maps (servicio web REST).
- *
- * Requisitos en Google Cloud Console:
- *  - Habilitar "Geocoding API" (además de "Maps SDK for Android").
- *  - La API key NO debe estar restringida a "Apps de Android" (las APIs web la rechazan);
- *    para la clase basta restringirla por API (Maps SDK for Android + Geocoding API).
- *
- * Si la API falla (sin internet, key sin Geocoding…), se usa el Geocoder de Android como respaldo.
- */
 class GeocodingRepository(private val context: Context) {
 
     suspend fun reverseGeocode(latitude: Double, longitude: Double): String? =

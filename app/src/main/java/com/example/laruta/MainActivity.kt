@@ -16,10 +16,7 @@ import com.example.laruta.ui.LaRutaApp
 import com.example.laruta.ui.theme.LaRutaTheme
 import com.example.laruta.viewmodel.TrackingViewModel
 
-/**
- * Única Activity. Aquí se decide el TEMA con el SENSOR DE LUZ:
- *  poca luz → modo oscuro (y mapa oscuro) · mucha luz → modo claro.
- */
+
 class MainActivity : ComponentActivity() {
 
     private val viewModel: TrackingViewModel by viewModels()
@@ -39,7 +36,6 @@ class MainActivity : ComponentActivity() {
                 ThemeMode.DARK -> true
             }
 
-            // Íconos de la barra de estado claros u oscuros según el tema actual
             DisposableEffect(darkTheme) {
                 val transparent = android.graphics.Color.TRANSPARENT
                 val style = if (darkTheme) SystemBarStyle.dark(transparent)

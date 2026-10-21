@@ -26,7 +26,9 @@ android {
         versionName = "1.0"
 
         // Se inyecta en el AndroidManifest como ${MAPS_API_KEY}
-        val mapsApiKey = localProperties.getProperty("MAPS_API_KEY", "")
+        val mapsApiKey = localProperties.getProperty("MAPS_API_KEY")
+            ?: (project.findProperty("MAPS_API_KEY") as String?)
+            ?: ""
         manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
         // También disponible en código (BuildConfig.MAPS_API_KEY) para la Geocoding API de Google
         buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")

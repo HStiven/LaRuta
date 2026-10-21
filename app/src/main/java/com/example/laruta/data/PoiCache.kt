@@ -9,15 +9,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-/**
- * Almacenamiento TEMPORAL en caché (context.cacheDir).
- *
- * - Las fotos se guardan como JPG en cacheDir/pois/
- * - La información asociada (coordenadas, fecha, nombre) en cacheDir/pois/pois.json
- *
- * Android puede borrar la caché si necesita espacio: por eso es "temporal",
- * tal como pide el enunciado.
- */
 class PoiCache(context: Context) {
 
     private val directory = File(context.cacheDir, "pois").apply { mkdirs() }
