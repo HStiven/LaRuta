@@ -41,10 +41,6 @@ import com.example.laruta.ui.theme.LaRutaTheme
 import com.example.laruta.util.formatCoordinates
 import com.google.android.gms.maps.model.LatLng
 
-/**
- * Contenido del modal "+ Agregar": nombre opcional y botón para abrir la cámara.
- * Separado del ModalBottomSheet para poder verlo en @Preview.
- */
 @Composable
 fun AddPoiSheetContent(
     location: LatLng?,
@@ -127,7 +123,6 @@ fun AddPoiSheetContent(
     }
 }
 
-/** El modal (bottom sheet) que se abre con el botón "+ Agregar" del riel derecho. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddPoiBottomSheet(
@@ -156,7 +151,6 @@ fun AddPoiBottomSheet(
     }
 }
 
-/** Explica por qué se necesitan los permisos (o manda a Ajustes si se negaron para siempre). */
 @Composable
 fun PermissionDialog(
     permanentlyDenied: Boolean,
@@ -183,7 +177,6 @@ fun PermissionDialog(
     )
 }
 
-/** Confirmación para borrar todas las fotos de la caché. */
 @Composable
 fun ConfirmClearDialog(onConfirm: () -> Unit, onDismiss: () -> Unit) {
     AlertDialog(
@@ -196,8 +189,6 @@ fun ConfirmClearDialog(onConfirm: () -> Unit, onDismiss: () -> Unit) {
         dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } }
     )
 }
-
-// ------------------------------------------------------------------ Previews
 
 @Preview(name = "Modal agregar · oscuro", showBackground = true, backgroundColor = 0xFF1B2230)
 @Composable

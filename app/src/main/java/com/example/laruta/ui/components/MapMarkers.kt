@@ -31,7 +31,6 @@ import com.example.laruta.ui.theme.LaRutaTheme
  * tienen @Preview y puedes cambiar su diseño aquí.
  */
 
-/** Marcador del usuario: persona caminando, corredor o moto, con halo. */
 @Composable
 fun UserMarkerContent(mode: TravelMode, isTracking: Boolean, modifier: Modifier = Modifier) {
     val accent = if (isTracking) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.primary
@@ -53,7 +52,6 @@ fun UserMarkerContent(mode: TravelMode, isTracking: Boolean, modifier: Modifier 
     }
 }
 
-/** Marcador de un punto de interés (foto): pin naranja con cámara. */
 @Composable
 fun PoiMarkerContent(modifier: Modifier = Modifier) {
     val color = MaterialTheme.colorScheme.secondary
@@ -78,7 +76,6 @@ fun PoiMarkerContent(modifier: Modifier = Modifier) {
     }
 }
 
-/** Marcador del punto de inicio del recorrido. */
 @Composable
 fun StartMarkerContent(modifier: Modifier = Modifier) {
     Box(

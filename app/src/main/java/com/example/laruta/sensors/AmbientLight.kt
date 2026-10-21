@@ -20,21 +20,11 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.delay
 
-/**
- * Estado del SENSOR DE LUZ (TYPE_LIGHT, mide luxes).
- *
- * Usa HISTÉRESIS para que el tema no parpadee:
- *  - pasa a oscuro cuando la luz baja de [DARK_BELOW_LUX]
- *  - vuelve a claro cuando sube de [LIGHT_ABOVE_LUX]
- *  - entre ambos valores se mantiene el modo actual.
- */
 @Stable
 class AmbientLightState(val isAvailable: Boolean) {
-    /** Última lectura en luxes (-1 = aún no hay lectura). */
     var lux by mutableFloatStateOf(-1f)
         private set
 
-    /** Modo que pide el sensor según la histéresis (null = sin lectura). */
     var targetDark by mutableStateOf<Boolean?>(null)
         private set
 

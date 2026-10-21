@@ -44,7 +44,6 @@ import com.example.laruta.model.TravelMode
 import com.example.laruta.ui.theme.LaRutaTheme
 import com.example.laruta.util.formatDuration
 
-/** Ícono de cada modo de recorrido (persona, corredor, moto). */
 val TravelMode.icon: ImageVector
     get() = when (this) {
         TravelMode.WALK -> Icons.AutoMirrored.Filled.DirectionsWalk
@@ -52,7 +51,6 @@ val TravelMode.icon: ImageVector
         TravelMode.MOTO -> Icons.Filled.TwoWheeler
     }
 
-/** Color de fondo de los botones flotantes: superficie casi opaca para leerse sobre el mapa. */
 @Composable
 fun mapControlColor(): Color = MaterialTheme.colorScheme.surface.copy(alpha = 0.95f)
 
@@ -120,7 +118,6 @@ fun RouteControls(
     }
 }
 
-/** Un botón dentro del riel derecho. */
 @Composable
 private fun RailButton(icon: ImageVector, label: String, onClick: () -> Unit, tint: Color) {
     Surface(onClick = onClick, color = Color.Transparent, shape = RoundedCornerShape(12.dp)) {
@@ -137,10 +134,6 @@ private fun RailButton(icon: ImageVector, label: String, onClick: () -> Unit, ti
     }
 }
 
-/**
- * Riel derecho (como el de la referencia):
- *  + Agregar foto (abre el modal) · Ver recorrido · Cambiar modo (persona/corredor/moto).
- */
 @Composable
 fun ActionRail(
     mode: TravelMode,

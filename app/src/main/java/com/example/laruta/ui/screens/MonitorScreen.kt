@@ -281,12 +281,6 @@ fun MonitorRoute(
     }
 }
 
-/**
- * Diseño de la pantalla Monitor (SIN estado): barra superior con pestañas Lista/Mapa,
- * mapa con controles flotantes como la app de referencia, o la lista de resumen.
- *
- * @param map el mapa real se pasa como slot; en los @Preview se usa un fondo de ejemplo.
- */
 @Composable
 fun MonitorScreen(
     state: TrackingState,

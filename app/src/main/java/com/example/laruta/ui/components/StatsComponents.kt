@@ -39,7 +39,6 @@ import com.example.laruta.util.formatDuration
 import com.example.laruta.util.formatSpeed
 import com.example.laruta.util.formatSteps
 
-/** Un valor de la tarjeta de estadísticas (Pasos, Distancia…). */
 @Composable
 private fun StatColumn(label: String, value: String, modifier: Modifier = Modifier) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
@@ -48,10 +47,6 @@ private fun StatColumn(label: String, value: String, modifier: Modifier = Modifi
     }
 }
 
-/**
- * Tarjeta flotante sobre el mapa: Pasos · Distancia · Tiempo · Velocidad.
- * La distancia sale del SENSOR (pasos × zancada); en moto, del GPS.
- */
 @Composable
 fun TrackingStatsCard(state: TrackingState, strideMeters: Float, modifier: Modifier = Modifier) {
     Surface(
@@ -89,7 +84,6 @@ fun TrackingStatsCard(state: TrackingState, strideMeters: Float, modifier: Modif
     }
 }
 
-/** Mosaico del dashboard: ícono de color + valor grande + etiqueta. */
 @Composable
 fun StatTile(
     icon: ImageVector,
@@ -122,7 +116,6 @@ fun StatTile(
     }
 }
 
-/** Resumen 2×2 del recorrido (cabecera del dashboard de Puntos de Interés). */
 @Composable
 fun TrackingSummaryGrid(state: TrackingState, strideMeters: Float, modifier: Modifier = Modifier) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -137,7 +130,6 @@ fun TrackingSummaryGrid(state: TrackingState, strideMeters: Float, modifier: Mod
     }
 }
 
-// ------------------------------------------------------------------ Previews
 
 @Preview(name = "Tarjeta de estadísticas", showBackground = true, backgroundColor = 0xFF242F3E, widthDp = 380)
 @Composable

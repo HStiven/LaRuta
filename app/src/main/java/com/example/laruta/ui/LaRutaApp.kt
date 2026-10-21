@@ -34,7 +34,6 @@ import com.example.laruta.ui.screens.ProfileRoute
 import com.example.laruta.util.openAppSettings
 import com.example.laruta.viewmodel.TrackingViewModel
 
-/** Navega a una pestaña de la barra inferior sin apilar pantallas repetidas. */
 private fun NavHostController.navigateTo(destination: Destination) {
     navigate(destination.route) {
         popUpTo(graph.findStartDestination().id) { saveState = true }
@@ -43,10 +42,6 @@ private fun NavHostController.navigateTo(destination: Destination) {
     }
 }
 
-/**
- * Raíz de la interfaz: barra inferior (Monitor · Puntos · Yo), Snackbars y NavHost.
- * Un único TrackingViewModel se comparte entre las tres pantallas.
- */
 @Composable
 fun LaRutaApp(
     viewModel: TrackingViewModel,

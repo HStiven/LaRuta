@@ -54,7 +54,6 @@ enum class MapTypeOption(val label: String, val icon: ImageVector, val googleTyp
     fun next(): MapTypeOption = entries[(ordinal + 1) % entries.size]
 }
 
-/** Centro de Bogotá: posición inicial de la cámara antes de tener GPS. */
 val BOGOTA = LatLng(4.6533, -74.0836)
 
 /**
@@ -87,7 +86,7 @@ fun TrackingMap(
     val properties = remember(darkStyle, mapType) {
         MapProperties(
             mapType = mapType.googleType,
-            // El estilo solo aplica al mapa normal; satélite/relieve se ven igual de día y de noche
+
             mapStyleOptions = if (mapType == MapTypeOption.NORMAL) darkStyle else null,
             isBuildingEnabled = true
         )
@@ -170,7 +169,6 @@ fun TrackingMap(
     }
 }
 
-/** Fondo falso tipo mapa (solo para los @Preview). */
 @Composable
 fun MapPreviewPlaceholder(isDarkTheme: Boolean, modifier: Modifier = Modifier) {
     val background = if (isDarkTheme) Color(0xFF242F3E) else Color(0xFFE8EAED)

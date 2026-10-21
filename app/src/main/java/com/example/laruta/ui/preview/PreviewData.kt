@@ -8,10 +8,6 @@ import com.example.laruta.model.TravelMode
 import com.example.laruta.model.UserSettings
 import com.google.android.gms.maps.model.LatLng
 
-/**
- * Datos FALSOS solo para los @Preview de Android Studio.
- * Edítalos para ver cómo se ve el diseño con otros valores.
- */
 object PreviewData {
 
     private const val NOW = 1_792_528_260_000L // 20 oct 2026, 3:31 p. m. (Bogotá)

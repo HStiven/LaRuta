@@ -65,10 +65,6 @@ private val AppShapes = Shapes(
     large = RoundedCornerShape(22.dp)
 )
 
-/**
- * Tema de LaRuta.
- * @param darkTheme lo decide MainActivity con el SENSOR DE LUZ (o la preferencia del usuario).
- */
 @Composable
 fun LaRutaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

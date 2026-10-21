@@ -147,8 +147,6 @@ private val ThemeMode.icon: ImageVector
         ThemeMode.DARK -> Icons.Filled.DarkMode
     }
 
-/** Pantalla "Yo" (SIN estado): perfil, zancada, tema por sensor de luz, sensores y permisos. */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     settings: UserSettings,
@@ -275,7 +273,6 @@ fun ProfileScreen(
     }
 }
 
-// ------------------------------------------------------------------ Previews
 
 @Preview(name = "Yo · oscuro", showSystemUi = true)
 @Composable

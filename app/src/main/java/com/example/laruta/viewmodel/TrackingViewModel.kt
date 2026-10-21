@@ -55,12 +55,6 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import java.io.File
 
-/**
- * Cerebro del recorrido. Vive mientras la Activity exista (sobrevive a rotaciones y
- * a abrir la cámara), así que aquí viven el GPS, el sensor de pasos, el cronómetro y las fotos.
- *
- * La UI solo LEE [state] / [settings] y llama funciones: nunca toca los sensores directamente.
- */
 class TrackingViewModel(application: Application) : AndroidViewModel(application) {
 
     // ---------- Estado expuesto a la UI ----------
@@ -77,11 +71,9 @@ class TrackingViewModel(application: Application) : AndroidViewModel(application
     private val _messages = MutableSharedFlow<UiMessage>(extraBufferCapacity = 8)
     val messages: SharedFlow<UiMessage> = _messages.asSharedFlow()
 
-    /** Punto al que la pantalla del mapa debe mover la cámara (p. ej. "Ver en el mapa" desde el dashboard). */
     private val _focusTarget = MutableStateFlow<LatLng?>(null)
     val focusTarget: StateFlow<LatLng?> = _focusTarget.asStateFlow()
 
-    /** Sensores disponibles en este teléfono. */
     val sensorInfo: SensorInfo = detectSensors(application)
 
     // ---------- Hardware ----------

@@ -44,10 +44,8 @@ import androidx.compose.ui.unit.dp
 import com.example.laruta.navigation.Destination
 import com.example.laruta.ui.theme.LaRutaTheme
 
-/** Pestañas superiores de la pantalla Monitor (como "Lista | Mapa" de la referencia). */
 enum class MonitorTab(val label: String) { LIST("Lista"), MAP("Mapa") }
 
-/** Logo circular de la app (arriba a la izquierda). */
 @Composable
 fun AppLogoBadge(modifier: Modifier = Modifier) {
     Box(
@@ -63,10 +61,6 @@ fun AppLogoBadge(modifier: Modifier = Modifier) {
     }
 }
 
-/**
- * Barra superior de Monitor: logo · nombre del usuario · acción (tipo de mapa),
- * y debajo las pestañas Lista / Mapa.
- */
 @Composable
 fun MonitorTopBar(
     title: String,
@@ -115,7 +109,6 @@ fun MonitorTopBar(
     }
 }
 
-/** Pestañas con subrayado azul bajo la seleccionada. */
 @Composable
 fun MonitorTabs(
     selectedTab: MonitorTab,
@@ -157,7 +150,6 @@ fun MonitorTabs(
     }
 }
 
-/** Barra superior simple para las demás pantallas */
 @Composable
 fun ScreenTopBar(
     title: String,
@@ -191,7 +183,6 @@ fun ScreenTopBar(
     }
 }
 
-/** Barra inferior: Monitor · Puntos (con contador de fotos) · Yo. */
 @Composable
 fun LaRutaBottomBar(
     current: Destination,

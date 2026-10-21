@@ -42,7 +42,6 @@ import com.example.laruta.ui.preview.PreviewData
 import com.example.laruta.ui.theme.LaRutaTheme
 import com.example.laruta.viewmodel.TrackingViewModel
 
-/** "Puntos de Interés" con estado: lee el ViewModel y maneja los diálogos. */
 @Composable
 fun PoiDashboardRoute(viewModel: TrackingViewModel, onShowOnMap: () -> Unit) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -84,10 +83,6 @@ fun PoiDashboardRoute(viewModel: TrackingViewModel, onShowOnMap: () -> Unit) {
     }
 }
 
-/**
- * Dashboard "Puntos de Interés" (SIN estado): resumen del recorrido en mosaicos
- * y la galería de todas las fotos con su información.
- */
 @Composable
 fun PoiDashboardScreen(
     state: TrackingState,
@@ -166,7 +161,6 @@ private fun EmptyPois() {
     }
 }
 
-// ------------------------------------------------------------------ Previews
 
 @Preview(name = "Dashboard · oscuro", showSystemUi = true)
 @Composable

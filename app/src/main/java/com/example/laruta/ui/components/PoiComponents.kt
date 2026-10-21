@@ -56,10 +56,6 @@ import com.example.laruta.util.formatDateTime
 import com.example.laruta.util.formatTime
 import java.io.File
 
-/**
- * Foto de un punto de interés leída desde la CACHÉ con Coil.
- * Detrás hay un fondo con ícono de cámara: se ve mientras carga y en los @Preview.
- */
 @Composable
 fun PoiPhoto(poi: PointOfInterest, modifier: Modifier = Modifier) {
     Box(
@@ -85,7 +81,6 @@ fun PoiPhoto(poi: PointOfInterest, modifier: Modifier = Modifier) {
     }
 }
 
-/** Fila ícono + texto pequeño. */
 @Composable
 fun InfoLine(icon: ImageVector, text: String, modifier: Modifier = Modifier, maxLines: Int = 1) {
     Row(modifier = modifier, verticalAlignment = Alignment.Top) {
@@ -108,7 +103,6 @@ fun InfoLine(icon: ImageVector, text: String, modifier: Modifier = Modifier, max
     }
 }
 
-/** Tarjeta del dashboard "Puntos de Interés": foto + nombre + fecha/hora + coordenadas. */
 @Composable
 fun PoiCard(poi: PointOfInterest, number: Int, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Card(
@@ -147,7 +141,6 @@ fun PoiCard(poi: PointOfInterest, number: Int, onClick: () -> Unit, modifier: Mo
     }
 }
 
-/** Fila compacta (para la pestaña "Lista" del Monitor). */
 @Composable
 fun PoiRow(poi: PointOfInterest, number: Int, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Row(
@@ -174,7 +167,6 @@ fun PoiRow(poi: PointOfInterest, number: Int, onClick: () -> Unit, modifier: Mod
     }
 }
 
-/** Detalle de un punto de interés: foto grande + toda su información. */
 @Composable
 fun PoiDetailDialog(
     poi: PointOfInterest,
@@ -220,8 +212,6 @@ fun PoiDetailDialog(
         }
     )
 }
-
-// ------------------------------------------------------------------ Previews
 
 @Preview(name = "Tarjeta de foto", showBackground = true, widthDp = 200)
 @Composable

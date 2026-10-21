@@ -12,17 +12,6 @@ import androidx.core.content.ContextCompat
 import com.example.laruta.model.StepSource
 import kotlin.math.sqrt
 
-/**
- * Cuenta pasos con el SENSOR DE MOVIMIENTO del teléfono.
- *
- * Orden de preferencia:
- *  1. TYPE_STEP_COUNTER  → sensor de hardware, el más preciso y de menor consumo.
- *  2. TYPE_STEP_DETECTOR → emite un evento por cada paso.
- *  3. TYPE_ACCELEROMETER → respaldo: detectamos los picos de aceleración de cada pisada
- *     (sirve en emuladores o teléfonos sin contador, o si se niega ACTIVITY_RECOGNITION).
- *
- * @param onSteps se llama con el total de pasos desde que se inició el recorrido.
- */
 class StepTracker(
     context: Context,
     private val onSteps: (Int) -> Unit
@@ -39,12 +28,10 @@ class StepTracker(
     private var aboveThreshold = false
     private var lastStepTimestampNs = 0L
 
-    /** Sensores de pasos disponibles en el dispositivo (para mostrarlos en Perfil). */
     val hasStepCounter: Boolean get() = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null
     val hasStepDetector: Boolean get() = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null
     val hasAccelerometer: Boolean get() = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
 
-    /** Empieza a escuchar el mejor sensor disponible y devuelve cuál se usó. */
     fun start(): StepSource {
         stop()
         counterBaseline = -1f
@@ -79,7 +66,6 @@ class StepTracker(
         }
     }
 
-    /** Deja de escuchar (ahorra batería). */
     fun stop() {
         sensorManager.unregisterListener(this)
     }
@@ -102,10 +88,6 @@ class StepTracker(
         }
     }
 
-    /**
-     * Detector sencillo de picos: cada pisada produce un pico en la magnitud
-     * de la aceleración por encima de la gravedad (≈ 9.8 m/s²).
-     */
     private fun detectStepFromAcceleration(event: SensorEvent) {
         val (x, y, z) = event.values
         val magnitude = sqrt(x * x + y * y + z * z)

@@ -39,7 +39,6 @@ class GeocodingRepository(private val context: Context) {
             val json = JSONObject(body)
             val status = json.optString("status")
             if (status != "OK") {
-                // REQUEST_DENIED suele significar: Geocoding API no habilitada o key restringida a Android
                 Log.w(TAG, "Geocoding API respondió $status: ${json.optString("error_message")}")
                 return null
             }
@@ -55,7 +54,7 @@ class GeocodingRepository(private val context: Context) {
         }
     }
 
-    @Suppress("DEPRECATION") // getFromLocation síncrono: estamos en Dispatchers.IO
+    @Suppress("DEPRECATION")
     private fun fromAndroidGeocoder(latitude: Double, longitude: Double): String? = runCatching {
         if (!Geocoder.isPresent()) return null
         Geocoder(context, Locale.getDefault())
