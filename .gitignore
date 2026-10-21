@@ -1,0 +1,13 @@
+# Gradle / Android Studio
+.gradle/
+build/
+/app/build/
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Contiene la ruta del SDK y la API key de Google Maps: NUNCA se sube al repositorio
+local.properties

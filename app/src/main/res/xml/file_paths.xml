@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Carpetas que el FileProvider puede compartir: solo la caché de puntos de interés -->
+<paths>
+    <cache-path name="pois" path="pois/" />
+</paths>
